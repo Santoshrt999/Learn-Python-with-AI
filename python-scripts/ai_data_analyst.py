@@ -44,6 +44,7 @@ def ask_claude(client: anthropic.Anthropic, data_json: str, question: str, histo
     On the first question, data is embedded in the message.
     On follow-ups, only the new question is added — history carries the context.
     """
+    messages: list[anthropic.types.MessageParam]
     if not history:
         # First turn: include the full dataset as context
         messages = [
