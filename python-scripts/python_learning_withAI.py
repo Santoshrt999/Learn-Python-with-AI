@@ -65,12 +65,29 @@ def demo_arithmetic():
 
 def demo_unit_conversions():
     console.print(f"\n[bold]4. Unit Conversions[/bold]")
-    console.print(f"   6 ft        → {6 * 0.3048:.2f} m")
-    console.print(f"   10 km       → {10 / 1.609:.2f} miles")
-    console.print(f"   82°F        → {(82 - 32) * 5/9:.1f}°C")
-    console.print(f"   30°C        → {(30 * 9/5) + 32:.1f}°F")
-    console.print(f"   145 lbs     → {145 * 0.453592:.2f} kg")
-    console.print(f"   8 fl oz     → {8 * 29.5735:.1f} ml")
+
+    # RULE: American → International (metric)  = MULTIPLY by the factor
+    #       International (metric) → American   = DIVIDE by the factor
+
+    # Length: factor = 0.3048
+    console.print(f"   6 ft        → {6 * 0.3048:.2f} m       (American→metric: × 0.3048)")
+    console.print(f"   2 m         → {2 / 0.3048:.2f} ft      (metric→American: ÷ 0.3048)")
+
+    # Distance: factor = 1.609
+    console.print(f"   10 miles    → {10 * 1.609:.2f} km      (American→metric: × 1.609)")
+    console.print(f"   10 km       → {10 / 1.609:.2f} miles   (metric→American: ÷ 1.609)")
+
+    # Temperature: special formula (not a simple multiply/divide)
+    console.print(f"   82°F        → {(82 - 32) * 5/9:.1f}°C       (American→metric: (F-32) × 5/9)")
+    console.print(f"   30°C        → {(30 * 9/5) + 32:.1f}°F       (metric→American: (C × 9/5) + 32)")
+
+    # Weight: factor = 0.453592
+    console.print(f"   145 lbs     → {145 * 0.453592:.2f} kg     (American→metric: × 0.453592)")
+    console.print(f"   65 kg       → {65 / 0.453592:.2f} lbs    (metric→American: ÷ 0.453592)")
+
+    # Volume: factor = 29.5735
+    console.print(f"   8 fl oz     → {8 * 29.5735:.1f} ml      (American→metric: × 29.5735)")
+    console.print(f"   100 ml      → {100 / 29.5735:.2f} fl oz  (metric→American: ÷ 29.5735)")
 
 
 # =============================================================================
