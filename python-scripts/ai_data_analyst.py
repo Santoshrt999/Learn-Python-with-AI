@@ -38,7 +38,7 @@ def load_csv(filepath: str) -> pd.DataFrame:
     return pd.read_csv(filepath)
 
 
-def ask_claude(client: anthropic.Anthropic, data_json: str, question: str, history: list) -> str:
+def ask_claude(client: anthropic.Anthropic, data_json: str, question: str, history: list[anthropic.types.MessageParam]) -> str:
     """Send the data + conversation history + new question to Claude.
 
     On the first question, data is embedded in the message.
@@ -85,7 +85,7 @@ def run():
     print("Examples: 'which car is cheapest?', 'average km driven?', 'best value car?'")
     print("Type 'quit' to exit.\n")
 
-    history = []
+    history: list[anthropic.types.MessageParam] = []
 
     while True:
         question = input("Your question → ").strip()
