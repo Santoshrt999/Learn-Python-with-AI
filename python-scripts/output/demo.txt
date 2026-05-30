@@ -1,0 +1,2 @@
+Hello, this is a demo file.
+Python uses 'with' to auto-close files — no manual f.close() needed.
