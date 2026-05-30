@@ -2,14 +2,14 @@
 AI Data Analyst — Ask plain English questions about your data using Claude.
 
 How it works:
-  1. Loads the Honda used car dataset by default (from data_analysis.py)
-  2. You ask questions in plain English
-  3. Claude reads the data and answers with specific numbers/insights
-  4. Follow-up questions remember previous context (conversation history)
+1. Loads the Honda used car dataset by default (from data_analysis.py)
+2. You ask questions in plain English
+3. Claude reads the data and answers with specific numbers/insights
+4. Follow-up questions remember previous context (conversation history)
 
 Usage:
-  python ai_data_analyst.py                  # uses built-in Honda dataset
-  python ai_data_analyst.py path/to/file.csv # use your own CSV file
+python ai_data_analyst.py                  # uses built-in Honda dataset
+python ai_data_analyst.py path/to/file.csv # use your own CSV file
 """
 
 import sys
